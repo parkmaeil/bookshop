@@ -22,29 +22,23 @@ pageEncoding="UTF-8"%>
   <div class="card">
     <div class="card-header">Book List</div>
     <div class="card-body">
-       <table class="table table-hover table-bordered">
-          <thead>
-            <tr>
-              <th>번호</th>
-              <th>제목</th>
-              <th>가격</th>
-              <th>저자</th>
-              <th>페이지</th>
-            </tr>
-          </thead>
-          <tbody>
-           <c:forEach var="book" items="${list}">
-            <tr>
-              <td>${book.id}</td>
-              <td>${book.title}</td>
-              <td>${book.price}</td>
-              <td>${book.author}</td>
-              <td>${book.page}</td>
-            </tr>
-           </c:forEach>
-          </tbody>
-       </table>
-       <button class="btn btn-sm btn-primary" onclick="location.href='${cpath}/bookRegister'">등록</button>
+       <!--  등록 UI(form)-->
+       <form action="/action_page.php">
+         <div class="form-group">
+           <label for="email">Email address:</label>
+           <input type="email" class="form-control" placeholder="Enter email" id="email">
+         </div>
+         <div class="form-group">
+           <label for="pwd">Password:</label>
+           <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+         </div>
+         <div class="form-group form-check">
+           <label class="form-check-label">
+             <input class="form-check-input" type="checkbox"> Remember me
+           </label>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
     </div>
     <div class="card-footer">디지털 빅테이터 과정</div>
   </div>
