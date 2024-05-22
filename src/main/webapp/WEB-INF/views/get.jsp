@@ -20,31 +20,28 @@ pageEncoding="UTF-8"%>
 <div class="container">
   <h2>Spring Framework</h2>
   <div class="card">
-    <div class="card-header">Book List</div>
+    <div class="card-header">책 상세보기</div>
     <div class="card-body">
-       <table class="table table-hover table-bordered">
-          <thead>
-            <tr>
-              <th>번호</th>
-              <th>제목</th>
-              <th>가격</th>
-              <th>저자</th>
-              <th>페이지</th>
-            </tr>
-          </thead>
-          <tbody>
-           <c:forEach var="book" items="${list}">
-            <tr>
-              <td>${book.id}</td>
-              <td><a href="${cpath}/get?id=${book.id}">${book.title}</a></td>
-              <td>${book.price}</td>
-              <td>${book.author}</td>
-              <td>${book.page}</td>
-            </tr>
-           </c:forEach>
-          </tbody>
-       </table>
-       <button class="btn btn-sm btn-primary" onclick="location.href='${cpath}/register'">등록</button>
+       <!--  상세보기-->
+         <div class="form-group">
+           <label for="title">책제목:</label>
+           <input type="text" class="form-control" value="${book.title}" readOnly>
+         </div>
+         <div class="form-group">
+           <label for="price">가격:</label>
+           <input type="number" class="form-control" value="${book.price}" readOnly>
+         </div>
+         <div class="form-group">
+           <label for="author">저자:</label>
+           <input type="text" class="form-control" value="${book.author}" readOnly>
+         </div>
+         <div class="form-group">
+           <label for="page">페이지:</label>
+           <input type="text" class="form-control" value="${book.page}" readOnly>
+         </div>
+         <a class="btn btn-primary" href="${cpath}/modify?id=${book.id}">수정</a>
+         <a class="btn btn-warning" href="${cpath}/remove?id=${book.id}">삭제</a>
+         <a class="btn btn-success" href="${cpath}/bookList">목록</a>
     </div>
     <div class="card-footer">디지털 빅테이터 과정</div>
   </div>

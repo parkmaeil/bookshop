@@ -18,5 +18,6 @@ http://www.springframework.org/schema/context https://www.springframework.org/sc
   </beans:bean>
 
   <context:component-scan base-package="kr.smhrd.controller" />
+  <context:component-scan base-package="kr.smhrd.service" />
 
 </beans:beans>

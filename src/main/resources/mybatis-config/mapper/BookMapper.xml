@@ -8,4 +8,26 @@
        select * from book
     </select>
 
+    <insert id="register" parameterType="kr.smhrd.entity.Book">
+       insert into book(title,price,author,page)
+       values(#{title},#{price},#{author},#{page})
+    </insert>
+
+    <select id="getById" resultType="kr.smhrd.entity.Book">
+      select * from book where id=#{id}
+    </select>
+
+    <delete id="remove">
+        delete from book where id=#{id}
+    </delete>
+
+    <update id="modify" parameterType="kr.smhrd.entity.Book">
+        update book
+        set
+            title=#{title},
+            price=#{price},
+            author=#{author},
+            page=#{page}
+        where id=#{id}
+    </update>
 </mapper>

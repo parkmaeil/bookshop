@@ -20,29 +20,31 @@ pageEncoding="UTF-8"%>
 <div class="container">
   <h2>Spring Framework</h2>
   <div class="card">
-    <div class="card-header">Book List</div>
+    <div class="card-header">책 수정하기</div>
     <div class="card-body">
-       <!--  등록 UI(form)-->
-       <form action="${cpath}/register" method="post">
+       <!--  상세보기-->
+       <form action="${cpath}/modify" method="post">
+         <input type="hidden" name="id" value="${book.id}"/>
          <div class="form-group">
            <label for="title">책제목:</label>
-           <input type="text" class="form-control" placeholder="Enter title" id="title" name="title">
+           <input type="text" class="form-control" value="${book.title}" name="title">
          </div>
          <div class="form-group">
            <label for="price">가격:</label>
-           <input type="number" class="form-control" placeholder="Enter price" id="price" name="price">
+           <input type="number" class="form-control" value="${book.price}" name="price">
          </div>
          <div class="form-group">
            <label for="author">저자:</label>
-           <input type="text" class="form-control" placeholder="Enter author" id="author" name="author">
+           <input type="text" class="form-control" value="${book.author}" name="author">
          </div>
          <div class="form-group">
            <label for="page">페이지:</label>
-           <input type="text" class="form-control" placeholder="Enter page" id="page" name="page">
+           <input type="text" class="form-control" value="${book.page}" name="page">
          </div>
-         <button type="submit" class="btn btn-primary">등록</button>
+         <button type="submit" class="btn btn-primary">수정</button>
          <button type="reset" class="btn btn-warning">취소</button>
-       </form>
+         <a class="btn btn-success" href="${cpath}/bookList">목록</a>
+        </form>
     </div>
     <div class="card-footer">디지털 빅테이터 과정</div>
   </div>
