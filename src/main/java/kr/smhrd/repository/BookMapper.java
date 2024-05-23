@@ -2,6 +2,7 @@ package kr.smhrd.repository;
 
 import kr.smhrd.entity.Book;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface BookMapper { // SQL Mapper file
     public void register(Book book);
     public Book getById(Long id);
     public void remove(Long id);
-    public void modify(Book book);
+    public void modify(@Param("id") Long id,@Param("book") Book book);
 }
 /*
    public SqlSessionFactoryBean implements BookMapper{

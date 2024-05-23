@@ -33,7 +33,7 @@ public class BookService { //new BookService()
         bookMapper.remove(id);
     }
     // 5. 수정하기
-    public void modify(Book book){
-        bookMapper.modify(book);
+    public void modify(Long id, Book book){
+        bookMapper.modify(id, book);
     }
 }

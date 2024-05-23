@@ -24,10 +24,10 @@
     <update id="modify" parameterType="kr.smhrd.entity.Book">
         update book
         set
-            title=#{title},
-            price=#{price},
-            author=#{author},
-            page=#{page}
+            title=#{book.title},
+            price=#{book.price},
+            author=#{book.author},
+            page=#{book.page}
         where id=#{id}
     </update>
 </mapper>

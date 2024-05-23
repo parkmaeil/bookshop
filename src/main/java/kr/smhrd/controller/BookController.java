@@ -40,27 +40,27 @@ public class BookController{ // BookController bookController=new BookController
       return "redirect:/bookList"; // redirect 기법
     }
     // 상세보기 요청
-    @GetMapping("/get") // ?id=2
-    public String bookDetail(Long id, Model model){ // id  X X X X
+    @GetMapping("/get/{id}") // /get/2
+    public String bookDetail(@PathVariable Long id, Model model){ // id  X X X X
         Book book=bookService.getById(id);
         // 객체바인딩....
         model.addAttribute("book", book);
         return "get"; // get.jsp
     }
-    @GetMapping("/remove") // ?id=3
-    public String remove(Long id){
+    @GetMapping("/remove/{id}") // ?id=3
+    public String remove(@PathVariable Long id){
         bookService.remove(id);
         return "redirect:/bookList";
     }
-    @GetMapping("/modify")
-    public String modify(Long id, Model model){
+    @GetMapping("/modify/{id}")
+    public String modify(@PathVariable Long id, Model model){
         Book book=bookService.getById(id);
         model.addAttribute("book", book);
         return "modify"; // modify.jsp(수정페이지)
     }
     @PostMapping("/modify")
-    public String modify(Book book){
-        bookService.modify(book); // 수정성공
+    public String modify(Long id, Book book){
+        bookService.modify(id, book); // 수정성공
         return "redirect:/bookList";
     }
 }

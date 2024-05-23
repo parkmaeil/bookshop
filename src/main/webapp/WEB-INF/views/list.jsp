@@ -36,7 +36,7 @@ pageEncoding="UTF-8"%>
            <c:forEach var="book" items="${list}">
             <tr>
               <td>${book.id}</td>
-              <td><a href="${cpath}/get?id=${book.id}">${book.title}</a></td>
+              <td><a href="${cpath}/get/${book.id}">${book.title}</a></td>
               <td>${book.price}</td>
               <td>${book.author}</td>
               <td>${book.page}</td>

@@ -39,8 +39,8 @@ pageEncoding="UTF-8"%>
            <label for="page">페이지:</label>
            <input type="text" class="form-control" value="${book.page}" readOnly>
          </div>
-         <a class="btn btn-primary" href="${cpath}/modify?id=${book.id}">수정</a>
-         <a class="btn btn-warning" href="${cpath}/remove?id=${book.id}">삭제</a>
+         <a class="btn btn-primary" href="${cpath}/modify/${book.id}">수정</a>
+         <a class="btn btn-warning" href="${cpath}/remove/${book.id}">삭제</a>
          <a class="btn btn-success" href="${cpath}/bookList">목록</a>
     </div>
     <div class="card-footer">디지털 빅테이터 과정</div>
