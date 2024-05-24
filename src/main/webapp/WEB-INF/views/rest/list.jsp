@@ -9,13 +9,17 @@ pageEncoding="UTF-8"%>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<script src="${cpath}/resources/js/list.js"></script>
-<script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="${cpath}/resources/js/list.js"></script>
+  <script>
    loadBookList();
-</script>
+  </script>
 </head>
 <body>
-  <table>
+  <table class="table table-hover table-boarded">
     <thead>
     <tr>
       <td>번호</td>
@@ -28,6 +32,6 @@ pageEncoding="UTF-8"%>
        <!-- 여기에 책 리스트가 나오기 -->
     </tbody>
   </table>
-
+  <button class="btn btn-sm btn-primary" onclick="location.href='${cpath}/ui/register'">등록</button>
 </body>
 </html>
